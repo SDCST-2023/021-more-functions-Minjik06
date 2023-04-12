@@ -13,12 +13,24 @@ assert convertTemp(10,'C') == 50
 assert converTemp(32,'F') == 0
 """
 
-def convertTemp():
-    return
+def convertTemp(a, b):
+    try: 
+        a=float(a)
+        b=str(b)
+        if b=='C':
+            newD=a*1.8+32
+            print(round(newD,2))
+            return round(newD,2)
+        else:
+            newD=(a-32)/1.8
+            print(round(newD,2))
+            return round(newD,2)
+    except:
+        return "Wrong input value"
 
 def tests():
     assert convertTemp(10,'C') == 50.00
-    assert convertTemp(32,'F') == 0.00
+    assert convertTemp(32,'F') == 0.00   
     assert convertTemp(100,'C') == 212.00
     assert convertTemp(100,'F') == 37.78
     
@@ -27,3 +39,10 @@ def tests():
 
 if __name__== "__main__":
     tests()
+
+def main():
+    a=float(input("Enter the degrees"))
+    b=str(input("C or F"))
+    convertTemp(a, b)
+    
+main()

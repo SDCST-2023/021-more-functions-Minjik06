@@ -18,6 +18,7 @@ def btcTocad(a):
     try:
         canD=float(a)
         canD=a*45000
+        print(canD)
         return(canD)
     except:
         return("error")
@@ -31,7 +32,15 @@ are not executed.
 if __name__ == "__main__":
     try:
         assert btcTocad(1) == 45000
-        assert btcTocad(2.5) == 135000
+        assert btcTocad(2.5) == 135000                    
         assert btcTocad("one") == 'error'
     except:
         print("There are invalid value")
+
+
+def main():
+    a=float(input("Amount of Btc: "))
+    btcTocad(a)
+main()
+
+
